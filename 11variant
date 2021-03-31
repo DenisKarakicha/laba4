@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+void hard()
+{ 
+    string line = "казнить нельзя, помиловать";
+    int Space1 = line.find(' '), Space2 = line.rfind(' ');
+    string world1 = line.substr(0, Space1),world2 = line.substr(Space2+1);
+    line.replace(Space2 + 1, line.length() - Space2, world1);
+    line.replace(0, Space1, world2);
+    cout << line << endl;
+}
+
+
+void bas()
+{
+
+    string line;
+    for (size_t i = 97; i < 122; i++)
+    {
+        line = i;
+        cout << " " << line;
+    }
+    cout << endl;
+
+}
+void ez()
+{
+    string line = "Sttopp";
+    /*line.replace(1, 1, "");
+    line.replace(3, 1, "");
+    cout << line;*/
+    line.erase(1, 1);
+    line.erase(3, 1);
+    cout << line;
+}
+
+int main()
+{
+    setlocale(0, "ru");
+    cout << "Легкий уровень: ";
+    ez();
+    cout <<endl<< "Средний уровень:" ;
+    bas();
+    cout << "Сложный уровень: ";
+    hard();
+}
